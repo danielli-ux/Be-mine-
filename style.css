@@ -41,17 +41,27 @@ button {
     position: relative; /* Add this so we can move it with top/left coordinates */
 
 }
-/* Restrict the size of images inside the container */
-#image-container img {
-    height: 300px;  /* Sets a fixed height */
-    width: auto;    /* Keeps the photo from looking squished */
-    object-fit: cover; /* Ensures the image fills the space nicely */
-    display: flex;             /* Makes images sit in a row */
-    justify-content: center;   /* Centers them */
-    align-items: center;       /* Aligns them vertically */
+/* Container for the 3 images */
+#image-container {
+    display: flex;             /* Activates the flexible layout */
+    flex-direction: row;       /* Forces items to sit in a horizontal LINE */
+    justify-content: center;   /* Centers the group in the middle of the screen */
+    align-items: center;       /* Aligns them vertically so they look neat */
     gap: 20px;                 /* Adds space between the pictures */
+    width: 100%;               /* Ensures it uses the full screen width */
 }
 
+/* Make sure the images don't get too big */
+#image-container img {
+    max-height: 300px;         /* Limits height */
+    width: auto;               /* Maintains aspect ratio */
+    border-radius: 10px;       /* Optional: rounded corners */
+}
+
+/* Optional: Make side images slightly smaller if you want the center to pop */
+.side-img {
+    height: 200px;             /* Specific height for side images */
+}
 /* Optional: Make the side images a bit smaller so the center one pops */
 .side-img {
     height: 150px;
@@ -64,3 +74,4 @@ button {
     font-family: 'Sacramento', cursive;
     margin-top: 20px;
 }
+
