@@ -46,4 +46,21 @@ button {
     height: 300px;  /* Sets a fixed height */
     width: auto;    /* Keeps the photo from looking squished */
     object-fit: cover; /* Ensures the image fills the space nicely */
+    display: flex;             /* Makes images sit in a row */
+    justify-content: center;   /* Centers them */
+    align-items: center;       /* Aligns them vertically */
+    gap: 20px;                 /* Adds space between the pictures */
+}
+
+/* Optional: Make the side images a bit smaller so the center one pops */
+.side-img {
+    height: 150px;
+    width: auto;
+    border-radius: 10px;
+}
+#success-message {
+    font-size: 40px;
+    color: #ff0000;
+    font-family: 'Sacramento', cursive;
+    margin-top: 20px;
 }
