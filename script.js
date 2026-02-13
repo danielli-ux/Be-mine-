@@ -71,23 +71,39 @@ function displayCat() {
 
 // Function to display the cat-heart.gif
 function displayCatHeart() {
-    // Clear existing content in the image container
+    // Clear container and hide text
     document.getElementById('image-container').innerHTML = '';
-    // Get the container where the image will be displayed
-    var imageContainer = document.getElementById('image-container');
-    // Create a new Image element
-    var catHeartImage = new Image();
-    // Set the source (file path)
-    catHeartImage.src = 'cat-heart.gif'; 
-    // Set alternative text
-    catHeartImage.alt = 'Cat Heart';
-    // When the image is fully loaded, add it to the image container
-    catHeartImage.onload = function() {
-        imageContainer.appendChild(catHeartImage);
-        // Hide the options container
-        document.getElementById('options').style.display = 'none';
-    };
+    document.getElementById('options').style.display = 'none';
+    document.getElementById('question').style.display = 'none';
+    document.getElementById('pre-message').style.display = 'none';
+    document.getElementById('success-message').style.display = 'block';
+
+    var container = document.getElementById('image-container');
+
+    // --- Create Left Image ---
+    var leftImg = new Image();
+    leftImg.src = 'left-pic.jpg'; // CHANGE THIS FILENAME
+    leftImg.className = 'side-img'; // Applies the CSS class we made
+    leftImg.alt = 'Left';
+
+    // --- Create Center Image (The Heart Cat) ---
+    var centerImg = new Image();
+    centerImg.src = 'cat-heart.gif';
+    centerImg.alt = 'Center';
+    // Use your existing image sizing logic here if needed
+
+    // --- Create Right Image ---
+    var rightImg = new Image();
+    rightImg.src = 'right-pic.jpg'; // CHANGE THIS FILENAME
+    rightImg.className = 'side-img';
+    rightImg.alt = 'Right';
+
+    // --- Add them to screen in order ---
+    container.appendChild(leftImg);
+    container.appendChild(centerImg);
+    container.appendChild(rightImg);
 }
 
 // Display the dog.jpg initially
 displayCat();
+
