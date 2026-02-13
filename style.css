@@ -39,4 +39,11 @@ button {
     cursor: pointer; /* Set cursor to pointer on hover */
     /* ... existing styles ... */
     position: relative; /* Add this so we can move it with top/left coordinates */
+
+}
+/* Restrict the size of images inside the container */
+#image-container img {
+    height: 300px;  /* Sets a fixed height */
+    width: auto;    /* Keeps the photo from looking squished */
+    object-fit: cover; /* Ensures the image fills the space nicely */
 }
