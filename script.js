@@ -69,36 +69,37 @@ function displayCat() {
     };
 }
 
-// Function to display the cat-heart.gif
 function displayCatHeart() {
-    // Clear container and hide text
+    // 1. Clear everything and hide the text/buttons from Page 1
     document.getElementById('image-container').innerHTML = '';
     document.getElementById('options').style.display = 'none';
     document.getElementById('question').style.display = 'none';
-    document.getElementById('pre-message').style.display = 'none';
+    document.getElementById('pre-message').style.display = 'none'; // Hides "Hey gorgeous"
+    
+    // 2. Show the success text
     document.getElementById('success-message').style.display = 'block';
 
+    // 3. Create the 3 Images
     var container = document.getElementById('image-container');
 
-    // --- Create Left Image ---
+    // --- Left Image ---
     var leftImg = new Image();
-    leftImg.src = 'left-pic.jpg'; // CHANGE THIS FILENAME
-    leftImg.className = 'side-img'; // Applies the CSS class we made
-    leftImg.alt = 'Left';
+    leftImg.src = 'left-pic.jpg';  // MAKE SURE YOU HAVE A FILE NAMED THIS
+    leftImg.className = 'side-img'; // Uses the special size from CSS
+    leftImg.alt = 'Left Memory';
 
-    // --- Create Center Image (The Heart Cat) ---
+    // --- Center Image (GIF) ---
     var centerImg = new Image();
     centerImg.src = 'cat-heart.gif';
-    centerImg.alt = 'Center';
-    // Use your existing image sizing logic here if needed
+    centerImg.alt = 'Celebrating';
 
-    // --- Create Right Image ---
+    // --- Right Image ---
     var rightImg = new Image();
-    rightImg.src = 'right-pic.jpg'; // CHANGE THIS FILENAME
+    rightImg.src = 'right-pic.jpg'; // MAKE SURE YOU HAVE A FILE NAMED THIS
     rightImg.className = 'side-img';
-    rightImg.alt = 'Right';
+    rightImg.alt = 'Right Memory';
 
-    // --- Add them to screen in order ---
+    // 4. Add them to the row (Order matters!)
     container.appendChild(leftImg);
     container.appendChild(centerImg);
     container.appendChild(rightImg);
@@ -106,4 +107,5 @@ function displayCatHeart() {
 
 // Display the dog.jpg initially
 displayCat();
+
 
